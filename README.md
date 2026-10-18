@@ -11,7 +11,7 @@ Jogos simples para aprender **História** e **Informática** brincando, feitos c
 ![Menu com todos os jogos](print.png)
 
 ## Sobre o projeto
-Sou formada em História e estou cursando Análise e Desenvolvimento de Sistemas. No estágio (2020-2021), durante a pandemia, dei aulas para alunos de escola pública e ajudei com computador, internet, Word, Excel, PowerPoint e PDF. Fiz esses jogos para praticar programação juntando as duas coisas: educação e tecnologia.
+Sou formada em História e estou cursando Análise e Desenvolvimento de Sistemas. No estágio (2020-2021), durante a pandemia, dei aulas para alunos de escola pública e ajudei com computador, internet, Word, Excel, PowerPoint e PDF. Estes jogos são inspirados nessas aulas: fiz para praticar programação juntando as duas coisas, educação e tecnologia.
 
 Em todos os jogos você escolhe antes o que quer aprender: **História** ou **Informática**.
 
