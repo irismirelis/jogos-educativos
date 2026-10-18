@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Educativo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="cartao">
+    <a class="voltar" href="../index.html">← Voltar ao menu</a>
+    <h1>❓ Quiz Educativo</h1>
+
+    <!-- TELA 1: escolher o que aprender -->
+    <section id="tela-tema">
+      <p class="instrucao">Responda 10 perguntas e veja a explicação de cada resposta. Boa sorte!</p>
+      <p class="pergunta-tema">O que você quer aprender?</p>
+      <div class="opcoes-tema">
+        <button class="opcao-tema" data-tema="historia"><span class="opcao-icone">📜</span>História</button>
+        <button class="opcao-tema" data-tema="informatica"><span class="opcao-icone">💻</span>Informática</button>
+      </div>
+    </section>
+
+    <!-- TELA 2: as perguntas -->
+    <section id="tela-pergunta" class="escondido">
+      <div class="barra-tema">
+        <span id="tema-atual" class="tema-atual"></span>
+        <button id="trocar-tema" class="trocar-tema">Trocar tema</button>
+      </div>
+      <div class="placar">
+        <span id="progresso"></span>
+        <span id="pontos"></span>
+      </div>
+      <div class="barra">
+        <div id="barra-preenchida" class="barra-preenchida"></div>
+      </div>
+      <h2 id="pergunta" class="pergunta"></h2>
+      <!-- os botões de resposta são criados pelo script.js -->
+      <div id="opcoes" class="opcoes"></div>
+      <p id="explicacao" class="explicacao"></p>
+      <button id="proxima" class="botao escondido">Próxima →</button>
+    </section>
+
+    <!-- TELA 3: resultado -->
+    <section id="tela-fim" class="escondido">
+      <p id="nota" class="nota"></p>
+      <p id="frase" class="frase"></p>
+      <button id="jogar-de-novo" class="botao">Jogar de novo</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

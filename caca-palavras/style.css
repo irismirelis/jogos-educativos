@@ -1,0 +1,279 @@
+/* =====================================================
+   CORES DO JOGO
+   Mude os valores aqui para trocar o visual inteiro.
+   ===================================================== */
+:root {
+  --cor-principal: #15803d;
+  --cor-principal-escura: #166534;
+  --cor-letra: #eef1f8;
+  --cor-letra-hover: #dbe3f3;
+  --cor-encontrada: #bbf7d0;
+  --cor-encontrada-texto: #14532d;
+  --cor-fundo: #f3f5fb;
+  --cor-cartao: #ffffff;
+  --cor-texto: #1f2a44;
+  --cor-texto-suave: #5b6478;
+  --cor-borda: #dde2ee;
+  --cor-certo: #15803d;
+  --cor-errado: #c62828;
+}
+
+/* =====================================================
+   BASE (igual em todos os jogos)
+   ===================================================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 16px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+.cartao {
+  max-width: 760px;
+  margin: 24px auto;
+  padding: 24px;
+  border-radius: 16px;
+  background: var(--cor-cartao);
+  box-shadow: 0 4px 20px rgba(31, 42, 68, 0.08);
+}
+
+.voltar {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--cor-principal);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.voltar:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  margin: 0 0 8px;
+  color: var(--cor-principal);
+  font-size: 1.8rem;
+}
+
+.instrucao {
+  color: var(--cor-texto-suave);
+  line-height: 1.5;
+}
+
+.mensagem {
+  min-height: 1.5em;
+  font-weight: 600;
+}
+
+.mensagem.certo {
+  color: var(--cor-certo);
+}
+
+.mensagem.errado {
+  color: var(--cor-errado);
+}
+
+.botao {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  background: var(--cor-principal);
+  color: #ffffff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.botao:hover {
+  background: var(--cor-principal-escura);
+}
+
+/* Classe usada pelo JavaScript para esconder elementos */
+.escondido {
+  display: none;
+}
+
+/* Em telas pequenas (celular), menos espaço nas bordas */
+@media (max-width: 480px) {
+  .cartao {
+    margin: 8px auto;
+    padding: 16px;
+  }
+}
+
+/* =====================================================
+   ESCOLHA DO TEMA (igual em todos os jogos)
+   ===================================================== */
+.pergunta-tema {
+  margin: 20px 0 12px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Dois botões grandes lado a lado (um embaixo do outro em telas bem pequenas) */
+.opcoes-tema {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.opcao-tema {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 22px 8px;
+  border: 2px solid var(--cor-principal);
+  border-radius: 14px;
+  background: #ffffff;
+  color: var(--cor-principal);
+  font: inherit;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.opcao-tema:hover {
+  background: var(--cor-principal);
+  color: #ffffff;
+}
+
+.opcao-icone {
+  font-size: 2.4rem;
+}
+
+/* Etiqueta com o tema escolhido e o botão para trocar */
+.barra-tema {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin-bottom: 12px;
+}
+
+.tema-atual {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--cor-principal);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.trocar-tema {
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--cor-principal);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* =====================================================
+   PARTES DESTE JOGO
+   ===================================================== */
+/* Grade e lista lado a lado no computador; uma embaixo da outra no celular */
+.area-do-jogo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* O número de colunas é definido pelo script.js (grid-template-columns) */
+.grade {
+  display: grid;
+  flex: 1 1 320px;
+  gap: 3px;
+  max-width: 460px;
+}
+
+.celula {
+  aspect-ratio: 1;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background: var(--cor-letra);
+  color: var(--cor-texto);
+  font: inherit;
+  font-size: clamp(0.85rem, 3.6vw, 1.15rem);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.celula:hover {
+  background: var(--cor-letra-hover);
+}
+
+/* Letras de uma palavra já encontrada */
+.celula.encontrada {
+  background: var(--cor-encontrada);
+  color: var(--cor-encontrada-texto);
+}
+
+/* Primeira letra clicada (vem por último para ganhar das outras regras) */
+.celula.selecionada {
+  background: var(--cor-principal);
+  color: #ffffff;
+}
+
+.lateral {
+  flex: 1 1 180px;
+}
+
+.lateral h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.lista-de-palavras {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 6px;
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.lista-de-palavras li {
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #f0fdf4;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Palavra encontrada fica riscada */
+.lista-de-palavras li.riscada {
+  background: #e5e7eb;
+  color: var(--cor-texto-suave);
+  text-decoration: line-through;
+}
+
+.botao-largo {
+  width: 100%;
+}
+
+/* Em celulares bem pequenos: menos espaço em volta, para as letras ficarem maiores */
+@media (max-width: 360px) {
+  .cartao {
+    padding: 12px;
+  }
+
+  .grade {
+    gap: 2px;
+  }
+}

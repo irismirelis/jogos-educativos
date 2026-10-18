@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo de Digitação</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="cartao">
+    <a class="voltar" href="../index.html">← Voltar ao menu</a>
+    <h1>⌨️ Jogo de Digitação</h1>
+    <p class="instrucao">Digite as palavras que aparecerem o mais rápido que conseguir, antes de o tempo acabar!</p>
+
+    <!-- TELA 1: escolher o que aprender -->
+    <section id="tela-tema">
+      <p class="pergunta-tema">O que você quer aprender?</p>
+      <div class="opcoes-tema">
+        <button class="opcao-tema" data-tema="historia"><span class="opcao-icone">📜</span>História</button>
+        <button class="opcao-tema" data-tema="informatica"><span class="opcao-icone">💻</span>Informática</button>
+      </div>
+    </section>
+
+    <!-- TELA 2: o jogo -->
+    <section id="tela-jogo" class="escondido">
+      <div class="barra-tema">
+        <span id="tema-atual" class="tema-atual"></span>
+        <button id="trocar-tema" class="trocar-tema">Trocar tema</button>
+      </div>
+
+      <div class="placar">
+        <div class="caixa">
+          <span class="rotulo">⏱️ Tempo</span>
+          <span id="tempo" class="valor"></span>
+        </div>
+        <div class="caixa">
+          <span class="rotulo">✔️ Palavras</span>
+          <span id="acertos" class="valor">0</span>
+        </div>
+      </div>
+
+      <p id="palavra" class="palavra">Pronto?</p>
+
+      <input id="campo" class="campo" type="text" placeholder="Digite aqui..."
+             autocomplete="off" autocapitalize="off" spellcheck="false" disabled>
+
+      <button id="comecar" class="botao botao-largo">▶️ Começar</button>
+      <p id="resultado" class="resultado"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

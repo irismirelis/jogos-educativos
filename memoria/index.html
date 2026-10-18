@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Memória</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="cartao">
+    <a class="voltar" href="../index.html">← Voltar ao menu</a>
+    <h1>🧠 Jogo da Memória</h1>
+
+    <!-- TELA 1: escolher o que aprender -->
+    <section id="tela-tema">
+      <p class="instrucao">Vire as cartas e encontre os pares. Se ficar difícil, peça uma <strong>dica</strong>!</p>
+      <p class="pergunta-tema">O que você quer aprender?</p>
+      <div class="opcoes-tema">
+        <button class="opcao-tema" data-tema="historia"><span class="opcao-icone">📜</span>História</button>
+        <button class="opcao-tema" data-tema="informatica"><span class="opcao-icone">💻</span>Informática</button>
+      </div>
+    </section>
+
+    <!-- TELA 2: o jogo -->
+    <section id="tela-jogo" class="escondido">
+      <div class="barra-tema">
+        <span id="tema-atual" class="tema-atual"></span>
+        <button id="trocar-tema" class="trocar-tema">Trocar tema</button>
+      </div>
+      <p id="instrucao-do-tema" class="instrucao"></p>
+
+      <div class="placar">
+        <span>Jogadas: <strong id="jogadas">0</strong></span>
+        <span>Pares: <strong id="pares"></strong></span>
+      </div>
+
+      <!-- as cartas são criadas pelo script.js -->
+      <div id="tabuleiro" class="tabuleiro"></div>
+
+      <p id="mensagem" class="mensagem"></p>
+      <div class="botoes">
+        <button id="dica" class="botao">💡 Dica</button>
+        <button id="reiniciar" class="botao">🔄 Reiniciar</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

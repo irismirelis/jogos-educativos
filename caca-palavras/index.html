@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caça-Palavras</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="cartao">
+    <a class="voltar" href="../index.html">← Voltar ao menu</a>
+    <h1>🔎 Caça-Palavras</h1>
+    <p class="instrucao">Clique na <strong>primeira letra</strong> e depois na <strong>última letra</strong> da palavra. As palavras podem estar na horizontal, na vertical ou na diagonal.</p>
+
+    <!-- TELA 1: escolher o que aprender -->
+    <section id="tela-tema">
+      <p class="pergunta-tema">O que você quer aprender?</p>
+      <div class="opcoes-tema">
+        <button class="opcao-tema" data-tema="historia"><span class="opcao-icone">📜</span>História</button>
+        <button class="opcao-tema" data-tema="informatica"><span class="opcao-icone">💻</span>Informática</button>
+      </div>
+    </section>
+
+    <!-- TELA 2: o jogo -->
+    <section id="tela-jogo" class="escondido">
+      <div class="barra-tema">
+        <span id="tema-atual" class="tema-atual"></span>
+        <button id="trocar-tema" class="trocar-tema">Trocar tema</button>
+      </div>
+
+      <div class="area-do-jogo">
+        <!-- as letras da grade são criadas pelo script.js -->
+        <div id="grade" class="grade"></div>
+
+        <div class="lateral">
+          <h2>Encontre:</h2>
+          <ul id="lista-de-palavras" class="lista-de-palavras"></ul>
+          <p id="mensagem" class="mensagem"></p>
+          <button id="novo-jogo" class="botao botao-largo">🔄 Novo jogo</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+/* =====================================================
+   CORES DO MENU
+   ===================================================== */
+:root {
+  --cor-fundo: #f3f5fb;
+  --cor-cartao: #ffffff;
+  --cor-texto: #1f2a44;
+  --cor-texto-suave: #5b6478;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 16px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+/* =====================================================
+   CABEÇALHO
+   ===================================================== */
+.cabecalho {
+  max-width: 960px;
+  margin: 24px auto 32px;
+  text-align: center;
+}
+
+.cabecalho h1 {
+  margin: 0 0 8px;
+  font-size: 2.2rem;
+}
+
+.cabecalho p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--cor-texto-suave);
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.cabecalho .autora {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* =====================================================
+   CARTÕES DOS JOGOS
+   A grade se ajusta sozinha: 1 coluna no celular,
+   2 ou 3 colunas em telas maiores.
+   ===================================================== */
+.jogos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.jogo {
+  display: block;
+  padding: 20px;
+  border-top: 6px solid var(--cor);
+  border-radius: 16px;
+  background: var(--cor-cartao);
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(31, 42, 68, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Quando o mouse passa por cima, o cartão "sobe" um pouquinho */
+.jogo:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(31, 42, 68, 0.14);
+}
+
+.icone {
+  font-size: 2rem;
+}
+
+.jogo h2 {
+  margin: 8px 0 6px;
+  color: var(--cor);
+  font-size: 1.25rem;
+}
+
+.jogo p {
+  margin: 0 0 12px;
+  color: var(--cor-texto-suave);
+  line-height: 1.4;
+}
+
+.etiqueta {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--cor);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+footer {
+  margin: 40px 0 16px;
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+  text-align: center;
+}

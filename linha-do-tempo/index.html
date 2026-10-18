@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linha do Tempo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="cartao">
+    <a class="voltar" href="../index.html">← Voltar ao menu</a>
+    <h1>📜 Linha do Tempo</h1>
+    <p class="instrucao">Clique nos acontecimentos na ordem certa: do <strong>mais antigo</strong> para o <strong>mais recente</strong>.</p>
+
+    <!-- TELA 1: escolher o que aprender -->
+    <section id="tela-tema">
+      <p class="pergunta-tema">O que você quer aprender?</p>
+      <div class="opcoes-tema">
+        <button class="opcao-tema" data-tema="historia"><span class="opcao-icone">📜</span>História</button>
+        <button class="opcao-tema" data-tema="informatica"><span class="opcao-icone">💻</span>Informática</button>
+      </div>
+    </section>
+
+    <!-- TELA 2: o jogo -->
+    <section id="tela-jogo" class="escondido">
+      <div class="barra-tema">
+        <span id="tema-atual" class="tema-atual"></span>
+        <button id="trocar-tema" class="trocar-tema">Trocar tema</button>
+      </div>
+
+      <h2>Acontecimentos</h2>
+      <div id="opcoes" class="opcoes"></div>
+
+      <p id="mensagem" class="mensagem"></p>
+
+      <h2>Sua linha do tempo <span class="erros">Erros: <strong id="erros">0</strong></span></h2>
+      <ol id="linha" class="linha"></ol>
+
+      <button id="nova-rodada" class="botao botao-largo">🔄 Nova rodada</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

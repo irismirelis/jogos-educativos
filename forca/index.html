@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Forca</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="cartao">
+    <a class="voltar" href="../index.html">← Voltar ao menu</a>
+    <h1>🔤 Jogo da Forca</h1>
+
+    <!-- TELA 1: escolher o que aprender -->
+    <section id="tela-tema">
+      <p class="instrucao">Descubra a palavra secreta com a ajuda de uma dica, antes de o boneco ficar completo. Você pode errar 6 letras.</p>
+      <p class="pergunta-tema">O que você quer aprender?</p>
+      <div class="opcoes-tema">
+        <button class="opcao-tema" data-tema="historia"><span class="opcao-icone">📜</span>História</button>
+        <button class="opcao-tema" data-tema="informatica"><span class="opcao-icone">💻</span>Informática</button>
+      </div>
+    </section>
+
+    <!-- TELA 2: o jogo -->
+    <section id="tela-jogo" class="escondido">
+      <div class="barra-tema">
+        <span id="tema-atual" class="tema-atual"></span>
+        <button id="trocar-tema" class="trocar-tema">Trocar tema</button>
+      </div>
+      <p class="dica">Dica: <strong id="dica"></strong></p>
+
+      <!-- desenho feito com SVG -->
+      <svg class="desenho" viewBox="0 0 200 220" role="img" aria-label="Desenho da forca">
+        <!-- a forca -->
+        <line x1="20" y1="210" x2="110" y2="210" />
+        <line x1="50" y1="210" x2="50" y2="20" />
+        <line x1="50" y1="20" x2="140" y2="20" />
+        <line x1="140" y1="20" x2="140" y2="45" />
+
+        <!-- o boneco: cada parte aparece quando erra uma letra -->
+        <circle class="parte" cx="140" cy="65" r="20" />
+        <line class="parte" x1="140" y1="85" x2="140" y2="145" />
+        <line class="parte" x1="140" y1="100" x2="115" y2="125" />
+        <line class="parte" x1="140" y1="100" x2="165" y2="125" />
+        <line class="parte" x1="140" y1="145" x2="120" y2="185" />
+        <line class="parte" x1="140" y1="145" x2="160" y2="185" />
+      </svg>
+
+      <p id="palavra" class="palavra"></p>
+      <p id="erros" class="erros"></p>
+
+      <!-- as teclas de A a Z são criadas pelo script.js -->
+      <div id="teclado" class="teclado"></div>
+
+      <p id="mensagem" class="mensagem"></p>
+      <button id="nova-palavra" class="botao botao-largo">🔄 Nova palavra</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
